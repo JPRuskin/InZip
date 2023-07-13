@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>inzip.powershell</id>
+    <version>$version$</version>
+    <title>InZip PowerShell Module</title>
+    <authors>James Ruskin</authors>
+    <owners>jpruskin</owners>
+    <licenseUrl>https://github.com/jpruskin/InZip/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jpruskin/InZip</projectUrl>
+    <projectSourceUrl>https://github.com/jpruskin/InZip</projectSourceUrl>
+    <iconUrl>https://github.com/jpruskin/InZip/blob/master/InZip.svg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[This module allows you to manipulate zip archives in memory.]]></description>
+    <summary> A PowerShell module to handle some operations on Zip files in memory.</summary>
+    <releaseNotes>https://github.com/jpruskin/InZip/releases</releaseNotes>
+    <copyright>Copyright 2023 JPRuskin. All Rights Reserved.</copyright>
+    <tags>inzip powershell addon foss cross-platform automation module</tags>
+    <packageSourceUrl>https://github.com/jpruskin/InZip/tree/master/chocolatey/</packageSourceUrl>
+    <bugTrackerUrl>https://github.com/jpruskin/InZip/issues</bugTrackerUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="..\$version$\**" target="tools\InZip\$version$\" />
+  </files>
+</package>
