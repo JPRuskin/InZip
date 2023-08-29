@@ -10,5 +10,12 @@ param(
 Build-Module -SemVer $Version
 
 if (-not $SkipPackage -and (Get-Command choco.exe -ErrorAction SilentlyContinue)) {
-    choco pack $PSScriptRoot\chocolatey\inzip.powershell.nuspec --version $Version --limit-output
+    $PackResult = choco pack $PSScriptRoot\chocolatey\inzip.powershell.nuspec --version $Version --limit-output
+
+    if ($LASTEXITCODE -eq 0) {
+        Write-Verbose $PackResult[-1]
+        $ChocolateyPackage = $PackResult[-1] -replace "Successfully created package '(?<Path>.+)'", '${Path}'
+    } else {
+        Write-Error "Failed to pack InZip Chocolatey Package: $($PackResult)"
+    }
 }
